@@ -2,7 +2,7 @@ SRC = main.c
 C = gcc
 CFLAGS = -Wall -Wextra -g
 BIN = queue.exe
-RM = del
+RM = rm
 
 clean:
 	$(RM) $(BIN)
