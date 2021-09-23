@@ -49,5 +49,5 @@ void queue_print(queue* q){
 		// Assuming type is int
 		printf("%i ", *(q->first + i));
 	}
-	printf("<- END OF QUEUE\n")
+	printf("<- END OF QUEUE\n");
 }
