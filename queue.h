@@ -4,13 +4,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define STRINGIFY(x) #x
-
 #ifndef TYPE
 #define TYPE int
+#endif
 
 #ifndef QUEUE_SIZE
 #define QUEUE_SIZE 64
+#endif
 
 typedef struct
 {
@@ -28,7 +28,6 @@ void queue_delete(queue*);
 // SPECIAL METHOD
 
 void queue_print(queue*);
+int queue_len(queue*);
 
-#endif
-#endif
 #endif

@@ -26,7 +26,7 @@ TYPE queue_front(queue* q){
 		return 0;
 	}
 	TYPE obj = *(q->first);
-	for (int i = 0; i < q->len - 2; i++){
+	for (int i = 0; i < q->len - 1; i++){
 		*(q->first + i) = *(q->first + i + 1);
 	}
 	*(q->first + q->len) = 0;
@@ -44,10 +44,18 @@ void queue_delete(queue* q){
 // SPECIAL
 
 void queue_print(queue* q){
+	if (queue_len(q) == 0){
+		printf("QUEUE IS EMPTY!\n");
+		return;
+	}
 	printf("FRONT OF QUEUE -> ");
 	for (int i = 0; i < q->len; i++){
 		// Assuming type is int
 		printf("%i ", *(q->first + i));
 	}
 	printf("<- END OF QUEUE\n");
+}
+
+int queue_len(queue* q){
+	return q->len;
 }
