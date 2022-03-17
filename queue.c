@@ -4,7 +4,7 @@ queue* queue_init(){
 	queue* q_ptr = malloc(sizeof(queue));
 	q_ptr->first = malloc(QUEUE_SIZE * sizeof(TYPE));
 	if (q_ptr->first == NULL){
-		fprintf(stderr, "COULD NOT ALLOCATE QUEUE MEMORY FOR %I64u", QUEUE_SIZE * sizeof(TYPE));
+		fprintf(stderr, "COULD NOT ALLOCATE QUEUE MEMORY FOR %I64u\n", QUEUE_SIZE * sizeof(TYPE));
 		exit(1);
 	}
 	q_ptr->len = 0;
@@ -13,7 +13,7 @@ queue* queue_init(){
 
 void queue_insert(queue* q, TYPE  obj){
 	if(q->len == QUEUE_SIZE){
-		fprintf(stderr, "QUEUE FILLED WITH %i OBJECTS FROM %p TO %p! CONSIDER HAVING A LARGER QUEUE!", QUEUE_SIZE, q->first, (q->first + QUEUE_SIZE));
+		fprintf(stderr, "QUEUE FILLED WITH %i OBJECTS FROM %p TO %p! CONSIDER HAVING A LARGER QUEUE!\n", QUEUE_SIZE, q->first, (q->first + QUEUE_SIZE));
 		exit(1);
 	}
 	*(q->first + q->len) = obj;
@@ -22,7 +22,7 @@ void queue_insert(queue* q, TYPE  obj){
 
 TYPE queue_front(queue* q){
 	if(q->len == 0){
-		fprintf(stderr, "QUEUE AT %p IS EMPTY!", q->first);
+		fprintf(stderr, "QUEUE AT %p IS EMPTY!\n", q->first);
 		return 0;
 	}
 	TYPE obj = *(q->first);

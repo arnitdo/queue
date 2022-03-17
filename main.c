@@ -3,9 +3,9 @@
 int main(){
 	queue* my_queue = queue_init();
 	int input = 0;
+	printf("Queue Implementation by S043 Arnav Deo\n");
 	do {	
-		printf("Queue Implementation by S043 Arnav Deo\n");
-		printf("Select Queue Operation - \n");
+		printf("\nSelect Queue Operation - \n");
 		printf("\t1 : Insert\n");
 		printf("\t2 : Front\n");
 		printf("\t3 : Length\n");
@@ -25,8 +25,12 @@ int main(){
 				break;
 			}	
 			case 2:{
-				int front = queue_front(my_queue);
-				printf("Front number is : %i\n", front);
+				if (queue_len(my_queue)){
+					int front = queue_front(my_queue);
+					printf("Front number is : %i\n", front);
+				} else {
+					fprintf(stderr, "QUEUE AT %p IS EMPTY!\n", my_queue->first);
+				}
 				break;
 			}	
 			case 3:{
