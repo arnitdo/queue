@@ -1,4 +1,4 @@
-SRC = main.c
+SRC = queue.c
 C = gcc
 CFLAGS = -Wall -Wextra -g
 BIN = queue.exe
